@@ -1,4 +1,5 @@
 import Complejos as c
+import ClasicoCuantico as cl
 import numpy as np
 import math
 
@@ -50,6 +51,24 @@ def ejercicio441():
         print("La multiplicación U2 y U1 es unitaria")
     else:
         print("La multiplicación U2 y U1 no es unitaria")
+
+def ejercicio442():
+    tp = 1/math.sqrt(2)
+    estadoI = [(0,1),(0,0),(0,0),(0,0)]
+    A = [[(0,0),(0,tp),(0,tp),(0,0)],[(tp,0),(0,0),(0,0),(0,tp)],[(0,tp),(0,0),(0,0),(tp,0)],[(0,0),(0,tp),(0,-tp),(0,0)]]
+    cli = cl.click(A,3)
+    print("La matriz A luego de 3 clicks se ve asi: ")
+    print()
+    for i in cli:
+        print(*i)
+    res = c.productoMatrizVector(cli,estadoI)
+    print()
+    print("El vector de probabilidades es el siguiente: ")
+    print(res)
+    print()
+    print("Su estado en el punto 3 es: "+str(res[2]))
+    
+    
     
     
     
